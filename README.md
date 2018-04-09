@@ -2,3 +2,26 @@
 
 # tabbed
 A javascript library for creating html tabs
+
+## Installation
+
+```html
+<link rel="stylesheet" href="tabbed.css">
+<script src="tabbed.js"></script>
+```
+
+## Usage
+
+```html
+<div class="tabbed">
+  <div class="tab" data-title='tab placeholder 1'>
+    this is a tab 1
+  </div>
+  <div class="tab" data-title='tab placeholder 2'>
+    this is a tab 2
+  </div>
+</div>
+<script>
+  tabbed(".tabbed");
+</script>
+```
