@@ -1,19 +1,20 @@
 ![warning](http://vps.vichas.org/api.php?message=This%20project%20is%20under%20development%20and%20should%20be%20considered%20an%20early%20alpha%20version&message_type=error&font_size=14&padding=10)
 
-# tabbed
-A javascript library for creating html tabs
+
+# Tabed
+tabed is a javascript/css library to help you create html tabs
 
 ## Installation
 
 ```html
-<link rel="stylesheet" href="tabbed.css">
-<script src="tabbed.js"></script>
+<link rel="stylesheet" href="tabed.css">
+<script src="tabed.js"></script>
 ```
 
 ## Usage
 
 ```html
-<div class="tabbed">
+<div class="tabed">
   <div class="tab" data-title='tab placeholder 1'>
     this is a tab 1
   </div>
@@ -22,6 +23,6 @@ A javascript library for creating html tabs
   </div>
 </div>
 <script>
-  tabbed(".tabbed");
+  tabed(".tabed");
 </script>
 ```
