@@ -1,11 +1,11 @@
 /**
 * Author: Stefanos Vichas
 * Version: 0.1.0
-* Project: https://github.com/svichas/Tabbed
+* Project: https://github.com/svichas/tabed
 * License: MIT
 */
 
-function tabbed(selector="") {
+function tabed(selector="") {
 
   // get all tabs with selector
   let tabWrappers = document.querySelectorAll(selector);
@@ -15,7 +15,7 @@ function tabbed(selector="") {
 
     // create menu element for tabs
     let tabMenuWrapper = document.createElement("ul");
-    tabMenuWrapper.className = "tabbed-menu-wrapper";
+    tabMenuWrapper.className = "tabed-menu-wrapper";
 
     // get all children from parent
     let tabs = tabWrapper.children;
@@ -25,14 +25,14 @@ function tabbed(selector="") {
 
       let menuItem = document.createElement("li");
       menuItem.innerHTML = tab.getAttribute("data-title");
-      menuItem.className = "tabbed-tab-open";
+      menuItem.className = "tabed-tab-open";
       menuItem.setAttribute("data-id", tabId);
       menuItem.onclick = function() {
 
         // remove selected tab class
-        this.parentElement.querySelector(".tabbed-selected-tab").classList.remove("tabbed-selected-tab");
+        this.parentElement.querySelector(".tabed-selected-tab").classList.remove("tabed-selected-tab");
         // add selected tab class to new tab
-        this.classList.add("tabbed-selected-tab");
+        this.classList.add("tabed-selected-tab");
 
         // get all tabs
         let childrenTabs = this.parentElement.parentElement.children;
@@ -42,27 +42,27 @@ function tabbed(selector="") {
         for (childrenTab of childrenTabs) {
 
           // ignore tab menu wrapper
-          if (childrenTab.className == "tabbed-menu-wrapper") continue;
+          if (childrenTab.className == "tabed-menu-wrapper") continue;
 
           // show and hide tab contents
           if (childrenId == menuId) {
-            childrenTab.classList.remove("tabbed-hidden");
+            childrenTab.classList.remove("tabed-hidden");
           } else {
-            childrenTab.classList.add("tabbed-hidden");
+            childrenTab.classList.add("tabed-hidden");
           }
 
           childrenId++;
         }
 
-        childrenTabs[this.getAttribute("data-id")].classList.remove("tabbed-hidden");
+        childrenTabs[this.getAttribute("data-id")].classList.remove("tabed-hidden");
 
       }
 
       // select first tab and hide all others
       if (tabId != 1) {
-        tab.classList.add("tabbed-hidden");
+        tab.classList.add("tabed-hidden");
       } else {
-        menuItem.classList.add("tabbed-selected-tab");
+        menuItem.classList.add("tabed-selected-tab");
       }
 
       // append menu item to menu wrapper for tab

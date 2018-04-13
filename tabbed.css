@@ -1,15 +1,15 @@
-.tabbed-hidden {
+.tabed-hidden {
   display: none;
 }
-ul.tabbed-menu-wrapper {
+ul.tabed-menu-wrapper {
   margin:0px;
   padding:0px;
   border-bottom: 2px solid #c0c0c0;
 }
-ul.tabbed-menu-wrapper li.tabbed-tab-open:first-child {
+ul.tabed-menu-wrapper li.tabed-tab-open:first-child {
   margin-left: 0px;
 }
-ul.tabbed-menu-wrapper li.tabbed-tab-open {
+ul.tabed-menu-wrapper li.tabed-tab-open {
   display: inline-block;
   margin-left: 2px;
   margin-right: 2px;
@@ -19,7 +19,7 @@ ul.tabbed-menu-wrapper li.tabbed-tab-open {
   padding: 10px;
   cursor: pointer;
 }
-ul.tabbed-menu-wrapper li.tabbed-tab-open.tabbed-selected-tab {
+ul.tabed-menu-wrapper li.tabed-tab-open.tabed-selected-tab {
   background: #f0f0f0;
   padding: 13px 10px;
 }
