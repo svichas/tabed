@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-
+	<title>Tabbed example #1</title>
 	<link rel="stylesheet" href="../tabbed.css">
-	<script src='../tabbed.js'></script>
-
+	<script src="../tabbed.js"></script>
 </head>
 <body>
-
-	<div class="tabbed">
-		<div class="tab" data-title='Awesome'>
-			this is a tab 1
-		</div>
-		<div class="tab" data-title='Awesome'>
-			this is a tab 2
-		</div>
-	</div>
 	
-	<div class="tabbed">
 
-		<div class="tab" data-title='Awesome'>
-			this is a tab
+	<div class="tabbed">
+		<div data-title="Tab 1">
+			<h3>this is tab #1</h3>
 		</div>
-		<div class="tab" data-title='Awesome <b>!</b>'>
-			this is a tab ksjdf sdkjf
-			<iframe src="https://facebook.com" frameborder="0"></iframe>
+		<div data-title="Tab 2">
+			<h3>this is tab #2</h3>
+		</div>
+		<div data-title="Tab 3">
+			<h3>this is tab #3</h3>
 		</div>
 	</div>
 
 	<script>
+		/**
+		* initialise tabbed tabs
+		*/
 		tabbed(".tabbed");
 	</script>
 
+	
 </body>
 </html>
