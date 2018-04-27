@@ -5,13 +5,25 @@
 * License: MIT
 */
 
-function tabed(selector="") {
+
+
+/**
+* @param string selector
+* @param object settings
+*/
+function tabed(selector="", settings={}) {
 
   // get all tabs with selector
   let tabWrappers = document.querySelectorAll(selector);
+  // get theme name
+  let themeName   = typeof settings.theme != "undefined" ? settings.theme : "default";
 
   // foreach tab wrapper
   tabWrappers.forEach(function(tabWrapper) {
+
+    // set theme name as class
+
+    tabWrapper.classList.add("tabed-" + themeName);
 
     // create menu element for tabs
     let tabMenuWrapper = document.createElement("ul");
@@ -69,7 +81,6 @@ function tabed(selector="") {
       tabMenuWrapper.appendChild(menuItem);
       tabId++;
     }
-
 
     // prepend tab menu to wrapper
     tabWrapper.insertBefore(tabMenuWrapper, tabs[0]);
