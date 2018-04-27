@@ -13,7 +13,7 @@
 ### Pull requests
 
 
-1. Fork essentials.css project and close your fork.
+1. Fork **tabed** project and close your fork.
 
 2. Create a new topic branch
 
