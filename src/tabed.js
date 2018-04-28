@@ -11,12 +11,12 @@
 * @param string selector
 * @param object settings
 */
-function tabed(selector="", settings={}) {
+function tabed(selector, settings) {
 
   // get all tabs with selector
-  let tabWrappers = document.querySelectorAll(selector);
+  var tabWrappers = document.querySelectorAll(selector);
   // get theme name
-  let themeName   = typeof settings.theme != "undefined" ? settings.theme : "default";
+  var themeName   = typeof settings.theme != "undefined" ? settings.theme : "default";
 
   // foreach tab wrapper
   tabWrappers.forEach(function(tabWrapper) {
@@ -26,16 +26,16 @@ function tabed(selector="", settings={}) {
     tabWrapper.classList.add("tabed-" + themeName);
 
     // create menu element for tabs
-    let tabMenuWrapper = document.createElement("ul");
+    var tabMenuWrapper = document.createElement("ul");
     tabMenuWrapper.className = "tabed-menu-wrapper";
 
     // get all children from parent
-    let tabs = tabWrapper.children;
-    let tabId = 1;
+    var tabs = tabWrapper.children;
+    var tabId = 1;
 
-    for (tab of tabs) {
-
-      let menuItem = document.createElement("li");
+    for (i=0;i<tabs.length;i++) {
+      var tab = tabs[i];
+      var menuItem = document.createElement("li");
       menuItem.innerHTML = tab.getAttribute("data-title");
       menuItem.className = "tabed-tab-open";
       menuItem.setAttribute("data-id", tabId);
@@ -47,12 +47,13 @@ function tabed(selector="", settings={}) {
         this.classList.add("tabed-selected-tab");
 
         // get all tabs
-        let childrenTabs = this.parentElement.parentElement.children;
-        let menuId = this.getAttribute("data-id");
+        var childrenTabs = this.parentElement.parentElement.children;
+        var menuId = this.getAttribute("data-id");
 
-        let childrenId = 1;
-        for (childrenTab of childrenTabs) {
+        var childrenId = 1;
+        for (i=0;i<childrenTabs.length;i++) {
 
+          var childrenTab = childrenTabs[i];
           // ignore tab menu wrapper
           if (childrenTab.className == "tabed-menu-wrapper") continue;
 

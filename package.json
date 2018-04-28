@@ -1,0 +1,34 @@
+{
+  "name": "tabed",
+  "version": "0.5.0",
+  "description": "A javascript library for creating HTML tabs",
+  "main": "dist/tabed.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svichas/tabed.git"
+  },
+  "keywords": [
+    "Javascript"
+  ],
+  "author": "Stefanos Vichas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svichas/tabed/issues"
+  },
+  "homepage": "https://github.com/svichas/tabed#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.0.1"
+  }
+}
