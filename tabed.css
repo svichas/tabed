@@ -1,6 +1,8 @@
 .tabed-hidden {
   display: none;
 }
+
+/** default style for tabs **/
 ul.tabed-menu-wrapper {
   margin:0px;
   padding:0px;
