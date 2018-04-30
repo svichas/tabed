@@ -13,8 +13,12 @@
 */
 function tabed(selector, settings) {
 
+  // default value for settings
+  if (typeof settings == "undefined") settings = {};
+
   // get all tabs with selector
   var tabWrappers = document.querySelectorAll(selector);
+
   // get theme name
   var themeName   = typeof settings.theme != "undefined" ? settings.theme : "default";
 
