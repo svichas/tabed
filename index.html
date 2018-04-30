@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/essentials.css@1.3.3/dist/essentials.min.css">
   <link rel="stylesheet" type="text/css" href="storage/cssbin/main.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/tabed@0.5.0/dist/tabed.min.css">
+  <script src="https://unpkg.com/tabed@0.5.0/dist/tabed.min.js"></script>
   <title>Tabed</title>
 </head>
 <body>
@@ -14,8 +17,24 @@
   <div class="container">
     <div class="main_table">
       <h2>Tabed</h2>
+
+      <h2>Examble</h2>
+      <div class="tabed">
+        <div class="tab" data-title="test">
+          sdfsdf
+        </div>
+        <div class="tab" data-title="test">
+          <b>test</b>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    tabed(".tabed", {
+      theme: "Test"
+    });
+  </script>
 
 </body>
 </html>
