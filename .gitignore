@@ -60,3 +60,6 @@ typings/
 
 .sass-cache/
 *.css.map
+
+
+test.html

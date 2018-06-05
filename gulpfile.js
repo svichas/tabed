@@ -16,7 +16,7 @@ gulp.task('compress-js', function (cb) {
 });
 gulp.task('compress-sass', function (cb) {
   pump([
-        gulp.src('src/*.sass'),
+        gulp.src('src/*.scss'),
         sass({outputStyle: "compressed"}).on("error", sass.logError),
         rename("tabed.min.css"),
         gulp.dest('dist'),
