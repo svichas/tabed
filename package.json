@@ -1,6 +1,6 @@
 {
   "name": "tabed",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A javascript library for creating HTML tabs",
   "main": "dist/tabed.js",
   "directories": {
