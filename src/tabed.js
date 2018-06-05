@@ -16,17 +16,20 @@ function tabed(selector, settings) {
   // default value for settings
   if (typeof settings == "undefined") settings = {};
 
+  // TODO: add costum theme setting.
+
   // get all tabs with selector
   var tabWrappers = document.querySelectorAll(selector);
 
   // get theme name
   var themeName   = typeof settings.theme != "undefined" ? settings.theme : "default";
 
+
   // foreach tab wrapper
-  tabWrappers.forEach(function(tabWrapper) {
+  for (var tabWrapperNumber=0;tabWrapperNumber<tabWrappers.length;tabWrapperNumber++) {
+    var tabWrapper = tabWrappers[tabWrapperNumber];
 
     // set theme name as class
-
     tabWrapper.classList.add("tabed-" + themeName);
 
     // create menu element for tabs
@@ -89,8 +92,7 @@ function tabed(selector, settings) {
 
     // prepend tab menu to wrapper
     tabWrapper.insertBefore(tabMenuWrapper, tabs[0]);
-
-  });
+  }
 
 
 }
