@@ -17,9 +17,12 @@ function tabed(selector, settings) {
   * Method to add class to a element
   */
   HTMLElement.prototype.tabedAddClass = function(className) {
+    
     var arr = this.className.split(" ");
+
+    // check if class already exists
     if (arr.indexOf(className) == -1) {
-      this.className += " " + className;
+      this.className += (this.className !== "" ? " " : "") + className;
     }
     return this;
   }
@@ -28,9 +31,7 @@ function tabed(selector, settings) {
   * Method to remove class to a element
   */
   HTMLElement.prototype.tabedRemoveClass = function(className) {
-    var classString = this.className;
-    var newClass = classString.concat(className);
-    this.className = newClass;
+    this.className = this.className.replace(className, "");
     return this;
   }
 
@@ -61,7 +62,7 @@ function tabed(selector, settings) {
     var tabs = tabWrapper.children;
     var tabId = 1;
 
-    for (i=0;i<tabs.length;i++) {
+    for (var i=0;i<tabs.length;i++) {
       var tab = tabs[i];
       var menuItem = document.createElement("li");
       menuItem.innerHTML = tab.getAttribute("data-title");
@@ -83,9 +84,9 @@ function tabed(selector, settings) {
         var menuId = this.getAttribute("data-id");
 
         var childrenId = 1;
-        for (i=0;i<childrenTabs.length;i++) {
+        for (var c=0;c<childrenTabs.length;c++) {
 
-          var childrenTab = childrenTabs[i];
+          var childrenTab = childrenTabs[c];
           // ignore tab menu wrapper
           if (childrenTab.className == "tabed-menu-wrapper") continue;
 
