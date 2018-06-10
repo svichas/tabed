@@ -6,21 +6,20 @@
 */
 
 
-.tabed-hidden {
+.tabed_hidden {
   display: none;
 }
 
 /** default style for tabs **/
-ul.tabed-menu-wrapper {
+.tabed_wrapper {
   margin: 0px;
   padding: 0px;
   border-bottom: 2px solid #c0c0c0;
 }
-ul.tabed-menu-wrapper li.tabed-tab-open:first-child {
+.tabed_tab_listener:first-child {
   margin-left: 0px;
 }
-
-ul.tabed-menu-wrapper li.tabed-tab-open {
+.tabed_tab_listener {
   display: inline-block;
   margin-left: 2px;
   margin-right: 2px;
@@ -30,8 +29,7 @@ ul.tabed-menu-wrapper li.tabed-tab-open {
   padding: 10px;
   cursor: pointer;
 }
-
-ul.tabed-menu-wrapper li.tabed-tab-open.tabed-selected-tab {
+.tabed_open {
   background: #f0f0f0;
   padding: 13px 10px;
 }
