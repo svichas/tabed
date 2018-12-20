@@ -5,8 +5,14 @@ tabed is a javascript/css library to help you create html tabs. JQuery is not ne
 ## Installation
 
 ```html
-<link rel="stylesheet" href="dist/tabed.min.css">
-<script src="dist/tabed.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tabed@0.7.0/dist/tabed.min.css">
+<script src="https://unpkg.com/tabed@0.7.0/dist/tabed.min.js"></script>
+```
+
+or
+
+```bash
+npm install tabed
 ```
 
 ## Browsers support

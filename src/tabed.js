@@ -1,6 +1,6 @@
 /**
 * Author: Stefanos Vichas
-* Version: 0.7.0
+* Version: 0.7.2
 * Project: htts://github.com/svichas/tabed
 * License: MIT
 */
