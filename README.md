@@ -1,8 +1,6 @@
-![warning](http://vps.vichas.org/api.php?message=This%20project%20is%20under%20development%20and%20should%20be%20considered%20an%20early%20alpha%20version&message_type=error&font_size=14&padding=10)
-
-
 # Tabed
-tabed is a javascript/css library to help you create html tabs
+
+tabed is a javascript/css library to help you create html tabs. JQuery is not needed.
 
 ## Installation
 
@@ -30,7 +28,7 @@ tabed is a javascript/css library to help you create html tabs
 </div>
 <script>
   new Tabed(".tabed", {
-    // settings...
+    // options...
   });
 </script>
 ```
