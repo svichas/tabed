@@ -16,6 +16,7 @@ class Tabed {
     // set defaults options
     this.opts = typeof opts == "undefined" ? {} : opts;
     this.opts.tabOpen = typeof this.opts.tabOpen == "undefined" ? 0 : this.opts.tabOpen;
+    this.opts.theme = typeof this.opts.theme == "undefined" ? "tabed_default_theme" : this.opts.theme;
 
     // get Element and children
     this.element = document.querySelector(el);
@@ -32,6 +33,7 @@ class Tabed {
   formatTabed() {
 
     this.element.classList.add("tabed_container");
+    this.element.classList.add(this.opts.theme);
 
     // Create menu wrapper
     let menuWrapper = document.createElement("ul");
@@ -65,6 +67,7 @@ class Tabed {
       if (i == this.opts.tabOpen) {
         currentTab.classList.add("open");
         currentMenuItem.classList.add("open");
+        currentMenuItem.setAttribute("aria-expanded", "true");
       }
 
       menuWrapper.appendChild(currentMenuItem);
@@ -78,14 +81,21 @@ class Tabed {
 
   menuItemClickEvent() {
 
+    // get tab menu items & tab elements
     let tabId = this.getAttribute("data-id");
     let tabElements = document.querySelectorAll(".tabed_tab_wrapper");
+    let tabMenuItems = document.querySelectorAll(".tabed_menuitem");
 
+    // loop items
     for (let i=0;i<tabElements.length;i++) {
       if (i==tabId) {
         tabElements[i].classList.add("open");
+        tabMenuItems[i].classList.add("open");
+        tabMenuItems[i].setAttribute("aria-expanded", "true");
       } else {
         tabElements[i].classList.remove("open");
+        tabMenuItems[i].classList.remove("open");
+        tabMenuItems[i].setAttribute("aria-expanded", "false");
       }
     }
 
