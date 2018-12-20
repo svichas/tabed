@@ -17,7 +17,7 @@ function tabed(selector, settings) {
   * Method to add class to a element
   */
   HTMLElement.prototype.tabedAddClass = function(className) {
-    
+
     var arr = this.className.split(" ");
 
     // check if class already exists
@@ -63,9 +63,9 @@ function tabed(selector, settings) {
     var tabId = 1;
 
     for (var i=0;i<tabs.length;i++) {
-      
+
       var tab = tabs[i];
-      
+
       tab.tabedAddClass("tabed_tab_wrapper");
 
       var menuItem = document.createElement("li");
