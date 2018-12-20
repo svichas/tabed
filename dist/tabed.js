@@ -27,7 +27,9 @@ function () {
     this.opts.theme = typeof this.opts.theme == "undefined" ? "tabed_default_theme" : this.opts.theme; // get Element and children
 
     this.element = document.querySelector(el);
-    this.tabs = this.element.children; // format tabed element to correct html stracture
+    this.tabs = this.element.children; // check if tabed element exists
+
+    if (this.element == null) return false; // format tabed element to correct html stracture
 
     this.formatTabed();
   }

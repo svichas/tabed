@@ -21,6 +21,9 @@ class Tabed {
     this.element = document.querySelector(el);
     this.tabs = this.element.children;
 
+    // check if tabed element exists
+    if (this.element == null) return false;
+
     // format tabed element to correct html stracture
     this.formatTabed();
   }
