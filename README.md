@@ -1,6 +1,6 @@
 # Tabed
 
-tabed is a javascript/css library to help you create html tabs. JQuery is not needed.
+tabed is a small, super fast and easy to use JavaScript Library to create HTML tabs.
 
 ## Installation
 
