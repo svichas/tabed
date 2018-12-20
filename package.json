@@ -1,6 +1,6 @@
 {
   "name": "tabed",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "A javascript library for creating HTML tabs",
   "main": "dist/tabed.js",
   "directories": {
@@ -31,8 +31,5 @@
     "gulp-uglify": "^3.0.0",
     "pump": "^3.0.0",
     "gulp-sass": "^4.0.1"
-  },
-  "dependencies": {
-    "underscore": "^1.9.1"
   }
 }

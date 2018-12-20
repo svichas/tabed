@@ -8,8 +8,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
 * Author: Stefanos Vichas
-* Version: 0.6.0
-* Project: https://github.com/svichas/tabed
+* Version: 0.7.0
+* Project: htts://github.com/svichas/tabed
 * License: MIT
 */
 var Tabed =
