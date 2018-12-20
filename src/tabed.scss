@@ -5,31 +5,9 @@
 * License: MIT
 */
 
-
-.tabed_hidden {
+.tabed_tab_wrapper {
   display: none;
-}
-
-/** default style for tabs **/
-.tabed_wrapper {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 2px solid #c0c0c0;
-}
-.tabed_tab_listener:first-child {
-  margin-left: 0px;
-}
-.tabed_tab_listener {
-  display: inline-block;
-  margin-left: 2px;
-  margin-right: 2px;
-  background: #c0c0c0;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  padding: 10px;
-  cursor: pointer;
-}
-.tabed_open {
-  background: #f0f0f0;
-  padding: 13px 10px;
+  &.open {
+    display: block;
+  }
 }

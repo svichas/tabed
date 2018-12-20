@@ -6,127 +6,89 @@
 */
 
 
-
-/**
-* @param string selector
-* @param object settings
-*/
-function tabed(selector, settings) {
+class Tabed {
 
   /**
-  * Method to add class to a element
+  * Main method
   */
-  HTMLElement.prototype.tabedAddClass = function(className) {
+  constructor(el, opts) {
 
-    var arr = this.className.split(" ");
+    // set defaults options
+    this.opts = typeof opts == "undefined" ? {} : opts;
+    this.opts.tabOpen = typeof this.opts.tabOpen == "undefined" ? 0 : this.opts.tabOpen;
 
-    // check if class already exists
-    if (arr.indexOf(className) == -1) {
-      this.className += ((this.className[this.className.length-1] == " " || this.className == "") ? "" : " ") + className;
-    }
-    return this;
+    // get Element and children
+    this.element = document.querySelector(el);
+    this.tabs = this.element.children;
+
+    // format tabed element to correct html stracture
+    this.formatTabed();
   }
+
 
   /**
-  * Method to remove class to a element
+  * Method to format tabed element to correct html stracture
   */
-  HTMLElement.prototype.tabedRemoveClass = function(className) {
-    this.className = this.className.replace(className, "");
-    return this;
-  }
+  formatTabed() {
 
-  // default value for settings
-  if (typeof settings == "undefined") settings = {};
+    this.element.classList.add("tabed_container");
 
-  settings.nav = (typeof settings.nav != "undefined") ? settings.nav : false;
+    // Create menu wrapper
+    let menuWrapper = document.createElement("ul");
+    menuWrapper.classList.add("tabed_menuwrapper");
 
-  // get all tabs with selector
-  var tabWrappers = document.querySelectorAll(selector);
+    /**
+    * Loop each tab
+    */
+    for (let i = 0; i < this.tabs.length; i++) {
 
-  // get theme name
-  var themeName   = typeof settings.theme != "undefined" ? settings.theme : "default";
+      let currentTab = this.tabs[i];
 
+      // Attach current tab data
+      currentTab.classList.add("tabed_tab_wrapper");
+      currentTab.setAttribute("data-id", i);
 
-  // foreach tab wrapper
-  for (var tabWrapperNumber=0;tabWrapperNumber<tabWrappers.length;tabWrapperNumber++) {
-    var tabWrapper = tabWrappers[tabWrapperNumber];
+      // Create menu item
+      let currentMenuItemTitle = currentTab.getAttribute("data-title");
+      let currentMenuItem = document.createElement("li");
 
-    // set theme name as class
-    //tabWrapper.classList.add("tabed-" + themeName);
-    tabWrapper.tabedAddClass("tabed_" + themeName);
-    // create menu element for tabs
-    var tabMenuWrapper = document.createElement("ul");
-    tabMenuWrapper.className = "tabed_wrapper";
+      // Attach menu item events and data
+      currentMenuItem.innerHTML = currentMenuItemTitle;
+      currentMenuItem.classList.add("tabed_menuitem");
+      currentMenuItem.setAttribute("data-id", i);
+      currentMenuItem.setAttribute("role", "button");
+      currentMenuItem.setAttribute("aria-haspopup", "true");
+      currentMenuItem.setAttribute("aria-expanded", "false");
+      currentMenuItem.onclick = this.menuItemClickEvent;
 
-    // get all children from parent
-    var tabs = tabWrapper.children;
-    var tabId = 1;
-
-    for (var i=0;i<tabs.length;i++) {
-
-      var tab = tabs[i];
-
-      tab.tabedAddClass("tabed_tab_wrapper");
-
-      var menuItem = document.createElement("li");
-      menuItem.innerHTML = tab.getAttribute("data-title");
-
-      // add class to tab open listener
-      menuItem.className = "tabed_tab_listener";
-      menuItem.setAttribute("data-id", tabId);
-
-      menuItem.onclick = function() {
-
-        // remove selected tab class
-        this.parentElement
-        .querySelector(".tabed_open")
-        .tabedRemoveClass("tabed_open");
-
-        // add selected tab class to new tab
-        this.tabedAddClass("tabed_open");
-
-        // get all tabs
-        var childrenTabs = this.parentElement.parentElement.children;
-        var menuId = this.getAttribute("data-id");
-
-        var childrenId = 1;
-        for (var c=0;c<childrenTabs.length;c++) {
-
-          var childrenTab = childrenTabs[c];
-          // ignore tab menu wrapper
-          if (childrenTab.className == "tabed_wrapper") continue;
-
-          // show and hide tab contents
-          if (childrenId == menuId) {
-            childrenTab.tabedRemoveClass("tabed_hidden");
-          } else {
-            childrenTab.tabedAddClass("tabed_hidden");
-          }
-
-          childrenId++;
-        }
-
-
-        // remove hidden class from selected tab
-        childrenTabs[this.getAttribute("data-id")].tabedRemoveClass("tabed_hidden");
-
+      // menu first menu item
+      if (i == this.opts.tabOpen) {
+        currentTab.classList.add("open");
+        currentMenuItem.classList.add("open");
       }
 
-      // select first tab and hide all others
-      if (tabId != 1) {
-        tab.tabedAddClass("tabed_hidden");
+      menuWrapper.appendChild(currentMenuItem);
+
+    }
+
+    // prepend menu to tabed element
+    this.element.insertBefore(menuWrapper, this.tabs[0]);
+
+  }
+
+  menuItemClickEvent() {
+
+    let tabId = this.getAttribute("data-id");
+    let tabElements = document.querySelectorAll(".tabed_tab_wrapper");
+
+    for (let i=0;i<tabElements.length;i++) {
+      if (i==tabId) {
+        tabElements[i].classList.add("open");
       } else {
-        menuItem.tabedAddClass("tabed_open");
+        tabElements[i].classList.remove("open");
       }
-
-      // append menu item to menu wrapper for tab
-      tabMenuWrapper.appendChild(menuItem);
-      tabId++;
     }
 
-    // prepend tab menu to wrapper
-    tabWrapper.insertBefore(tabMenuWrapper, tabs[0]);
   }
-
 
 }

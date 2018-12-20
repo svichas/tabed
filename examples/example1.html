@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Tabed example #1</title>
 <link rel="stylesheet" href="../dist/tabed.min.css">
-<script src="../dist/tabed.min.js"></script>
+<script src="../dist/tabed.js"></script>
 </head>
 <body>
 
@@ -21,12 +21,8 @@
 	</div>
 
 	<script>
-		/**
-		* initialise tabed tabs
-		*/
-		tabed(".tabed", {
-		// settings goes here
-		// theme: "theme name"
+		var tabedElement = new Tabed(".tabed", {
+			// "tabOpen": 1
 		});
 	</script>
 
