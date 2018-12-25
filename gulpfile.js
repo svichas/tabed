@@ -4,6 +4,7 @@ const pump   = require('pump');
 const rename = require("gulp-rename");
 const sass   = require("gulp-sass");
 const babel = require('gulp-babel');
+const autoprefixer = require('gulp-autoprefixer');
 
 
 
@@ -37,6 +38,10 @@ gulp.task('compress-sass', function (cb) {
   pump([
         gulp.src('src/*.scss'),
         sass({outputStyle: "compressed"}).on("error", sass.logError),
+        autoprefixer({
+            browsers: ['last 4 versions'],
+            cascade: false
+        }),
         rename("tabed.min.css"),
         gulp.dest('dist'),
     ],
