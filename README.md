@@ -5,8 +5,8 @@ tabed is a small, super fast and easy to use JavaScript Library to create HTML t
 ## Installation
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/tabed@0.7.2/dist/tabed.min.css">
-<script src="https://unpkg.com/tabed@0.7.2/dist/tabed.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tabed@0.7.3/dist/tabed.min.css">
+<script src="https://unpkg.com/tabed@0.7.3/dist/tabed.min.js"></script>
 ```
 
 or
