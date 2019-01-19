@@ -1,5 +1,8 @@
 # Tabed
 
+
+[![npm](https://img.shields.io/npm/v/tabed.svg?style=popout-square)](https://www.npmjs.com/package/tabed)
+
 tabed is a small, super fast and easy to use JavaScript Library to create HTML tabs.
 
 ## Installation
