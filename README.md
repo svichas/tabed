@@ -50,9 +50,9 @@ npm install tabed
 Option to set theme
 
 ```js
-  new Tabed(".tabed", {
-    theme: "theme_name"
-  });
+new Tabed(".tabed", {
+theme: "theme_name"
+});
 ```
 
 ### tabOpen
@@ -60,7 +60,7 @@ Option to set theme
 Option to set tab that will be open on start
 
 ```js
-  new Tabed(".tabed", {
-    tabOpen: 2
-  });
+new Tabed(".tabed", {
+tabOpen: 2
+});
 ```
